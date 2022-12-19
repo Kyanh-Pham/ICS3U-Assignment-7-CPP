@@ -8,16 +8,16 @@
 #include <iostream>
 
 template <size_t N>
-std::string concatenatesLists(list1, list2) {
+std::string concatenatesLists(std::array<std::string, N> list1,
+     std::array<std::string, N> list2) {
     int aSingleItem;
     std::string concatenatedLists[10];
-    std::string list1[5];
-    std::string list2[5]
 
-    for (int counter = 0; counter < list1.size(); counter++) {
-        list1[] = aSingleItem     }
+    for (int aSingleItem : list1) {
+        std::string list1[5] = aSingleItem;
         concatenatedLists = list1;
         return concatenatedLists;
+    }
 }
 
 int main() {
@@ -25,16 +25,15 @@ int main() {
 
     std::string firstList[5];
     std::string secondList[5];
-    std::string combinedLists[10];
-    int item;
+    std::string item;
 
-    for (int counter = 1; counter == 6; counter++) {
-        std::cout << "Item" << counter << ": " << std::endl;
+    for (int counter = 0; counter < 5; counter++) {
+        std::cout << "Item" << counter + 1 << ": " << std::endl;
         std::cin >> item;
         firstList[counter] = item;
     }
-    for (int counter = 1; counter == 6; counter++) {
-        std::cout << "Item" << counter << ": " << std::endl;
+    for (int counter = 0; counter < 5; counter++) {
+        std::cout << "Item" << counter + 1 << ": " << std::endl;
         std::cin >> item;
         secondList[counter] = item;
     }
