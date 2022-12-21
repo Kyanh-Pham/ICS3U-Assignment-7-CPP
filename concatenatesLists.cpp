@@ -10,7 +10,7 @@
 #include <string>
 
 std::list<std::string> concatenatesLists(std::list<std::string> list1,
-     std::list<std::string> list2) {
+    std::list<std::string> list2) {
 
     std::string aSingleItem;
     std::list<std::string> concatenatedLists;
