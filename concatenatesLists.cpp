@@ -4,21 +4,23 @@
 // Created on: Dec 2022
 // This program concatenates two lists
 
-#include <array>
+
 #include <iostream>
+#include <list>
 #include <string>
+#include <stdexcept>
 
-template <size_t N>
-std::array<std::string, 10> concatenatesLists(std::array<std::string, N> list1,
-    std::array<std::string, N> list2) {
+std::list<std::string> concatenatesLists(std::list<std::string> list1,
+                              std::list<std::string> list2) {
     std::string aSingleItem;
-    std::array<std::string, 10> concatenatedLists;
+    std::list<std::string> concatenatedLists;
+    int counter;
 
-    for (size_t counter = 0; counter < list1.size(); counter++) {
-        list1[counter] = aSingleItem;
+    for (std::string& item : list1) {
+        concatenatedLists.push_back(item);
     }
-    for (int counter = 0; counter < 10; counter++) {
-        concatenatedLists[counter] = list1[counter];
+    for (std::string& item : list2) {
+        concatenatedLists.push_back(item);
     }
     return concatenatedLists;
 }
@@ -26,28 +28,34 @@ std::array<std::string, 10> concatenatesLists(std::array<std::string, N> list1,
 int main() {
     // this function generates the random numbers
 
-    std::array<std::string, 5> firstList;
-    std::array<std::string, 5>  secondList;
+    std::list<std::string> firstList;
+    std::list<std::string> secondList;
     std::string item;
-    std::array<std::string, 10> combinedLists;
+    std::list<std::string> combinedLists;
 
+    std::cout << "Please enter 5 items to place in the list:" << std::endl;
+    std::cout << "" << std::endl;
     for (int counter = 0; counter < 5; counter++) {
         std::cout << "Item" << counter + 1 << ": ";
-        std::cin >> item;
-        firstList[counter] = item;
+        std::getline(std::cin, item);
+        firstList.push_back(item);
     }
+
+    std::cout << "Please enter 5 items to place in the list:" << std::endl;
+    std::cout << "" << std::endl;
     for (int counter = 0; counter < 5; counter++) {
         std::cout << "Item" << counter + 1 << ": ";
-        std::cin >> item;
-        secondList[counter] = item;
+        std::getline(std::cin, item);
+        secondList.push_back(item);
     }
     // calls function
     combinedLists = concatenatesLists(firstList, secondList);
     std::cout << "" << std::endl;
     std::cout << "Here is your combined list: " << std::endl;
-    for (int counter = 0; counter < 10; counter++) {
-        std::cout << combinedLists[counter] << std::endl;
+    for (std::string& item : combinedLists) {
+        std::cout << item << ", ";
     }
+    std::cout << std::endl;
 
     std::cout << "\nDone." << std::endl;
 }
