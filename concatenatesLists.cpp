@@ -8,7 +8,6 @@
 #include <iostream>
 #include <list>
 #include <string>
-#include <stdexcept>
 
 std::list<std::string> concatenatesLists(std::list<std::string> list1,
                               std::list<std::string> list2) {
