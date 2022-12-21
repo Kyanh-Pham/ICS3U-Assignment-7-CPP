@@ -11,9 +11,9 @@
 
 std::list<std::string> concatenatesLists(std::list<std::string> list1,
  std::list<std::string> list2) {
+    
     std::string aSingleItem;
     std::list<std::string> concatenatedLists;
-    int counter;
 
     for (std::string& item : list1) {
         concatenatedLists.push_back(item);
