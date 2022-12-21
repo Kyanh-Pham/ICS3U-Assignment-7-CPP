@@ -14,12 +14,11 @@ std::array<std::string, 10> concatenatesLists(std::array<std::string, N> list1,
     std::string aSingleItem;
     std::array<std::string, 10> concatenatedLists;
 
-    for (std::string aSingleItem : list1) {
-        std::string list1[5] = aSingleItem;
+    for (size_t counter = 0; counter < list1.size(); counter++) {
+        list1[counter] = aSingleItem;
     }
-    for (int items = 0; items < 10; items++) {
-        concatenatedLists[items] = list1;
-        list1++;
+    for (int counter = 0; counter < 10; counter++) {
+        concatenatedLists[counter] = list1[counter];
     }
     return concatenatedLists;
 }
@@ -27,18 +26,18 @@ std::array<std::string, 10> concatenatesLists(std::array<std::string, N> list1,
 int main() {
     // this function generates the random numbers
 
-    std::string firstList[5];
-    std::string secondList[5];
+    std::array<std::string, 5> firstList;
+    std::array<std::string, 5>  secondList;
     std::string item;
-    std::string combinedLists[10];
+    std::array<std::string, 10> combinedLists;
 
     for (int counter = 0; counter < 5; counter++) {
-        std::cout << "Item" << counter + 1 << ": " << std::endl;
+        std::cout << "Item" << counter + 1 << ": ";
         std::cin >> item;
         firstList[counter] = item;
     }
     for (int counter = 0; counter < 5; counter++) {
-        std::cout << "Item" << counter + 1 << ": " << std::endl;
+        std::cout << "Item" << counter + 1 << ": ";
         std::cin >> item;
         secondList[counter] = item;
     }
@@ -46,7 +45,9 @@ int main() {
     combinedLists = concatenatesLists(firstList, secondList);
     std::cout << "" << std::endl;
     std::cout << "Here is your combined list: " << std::endl;
-    std::cout << "" << combinedLists << "" << std::endl;
+    for (int counter = 0; counter < 10; counter++) {
+        std::cout << combinedLists[counter] << std::endl;
+    }
 
     std::cout << "\nDone." << std::endl;
 }
