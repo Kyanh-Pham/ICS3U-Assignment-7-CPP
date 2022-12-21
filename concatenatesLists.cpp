@@ -11,15 +11,15 @@
 
 std::list<std::string> concatenatesLists(std::list<std::string> list1,
  std::list<std::string> list2) {
-    
+
     std::string aSingleItem;
     std::list<std::string> concatenatedLists;
 
-    for (std::string& item : list1) {
-        concatenatedLists.push_back(item);
+    for (std::string& aSingleItem : list1) {
+        concatenatedLists.push_back(aSingleItem);
     }
-    for (std::string& item : list2) {
-        concatenatedLists.push_back(item);
+    for (std::string& aSingleItem : list2) {
+        concatenatedLists.push_back(aSingleItem);
     }
     return concatenatedLists;
 }
